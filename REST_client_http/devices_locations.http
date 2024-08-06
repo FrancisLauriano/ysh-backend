@@ -1,0 +1,25 @@
+### API YOLO
+
+GET http://localhost:3000/
+
+###
+
+#### DEVICES LOCATIONS
+
+### getDevicesInLocation
+GET http://localhost:3000/locations/1/devices
+
+###
+
+### updateDevicesInLocation
+PUT http://localhost:3000/locations/1/devices
+Content-Type: application/json
+
+{
+    "deviceData": [1, 2, 3, 4, 5]
+}
+
+###
+
+
+

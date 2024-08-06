@@ -1,0 +1,434 @@
+﻿COMO FRONTEND DEVERÁ CONSUMIR (‘INTEGRAR’) AO CÓDIGO DO BACKEND - ENDPOINT’s DISPONÍVEIS 
+
+
+EXECUTAR O SERVIDOR:
+1. Importante: Lembrando que para o front consumir a API da Yolo, isso deverá ser realizado através das aplicações do backEnd e não diretamente na API da Yolo.
+2. Deverá acessar o repositório no github do backend do projeto: https://github.com/7codetecnologia/backend
+3. Em seguida, deverá executar as aplicações do backend para rodar o servidor local e acessar os endpoint’s: npm run start
+ATENÇÃO:
+
+
+Em modo de desenvolvimento e para nível de testes, a API rodará em servidor local na porta 3000
+URL API => http://localhost:3000
+	
+
+ENDPOINT’S DISPONÍVEIS PARA O FRONTEND ACESSAR A API
+
+
+1. GET 
+/inbox
+
+OBS: O Inbox é a tela “inicial” que mostra (retorna) os devices (dispositivos) disponíveis.
+ 
+Exemplo Response (Retorna): [ ]
+
+2. GET
+/inbox/scan
+
+OBS: O inbox scan permite que um device (dispositivo) “entre” no inbox depois de “escaneado”.
+ 
+Exemplo Response (Retorna):  
+[
+  "tuya",
+  "zigbee"
+]
+
+3. GET
+/devices
+
+OBS: Mostra todos os devices (dispositivos) cadastrados.
+
+Exemplo Response (Retorna):  
+[
+  {
+    "id": 1,
+    "label": "Lâmpada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpgv",
+    "category": "Lamp"
+  },
+  {
+    "id": 2,
+    "label": "Tomada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:eb4b59a5903b11c15adu7m",
+    "category": "Plug"
+  },
+  {
+    "id": 3,
+    "label": "Interruptor Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:00158d00063ff206",
+    "category": "Switch"
+  },
+  {
+    "id": 4,
+    "label": "Tomada Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:84ba20fffe6d4d78",
+    "category": "Plug"
+  },
+  {
+    "id": 5,
+    "label": "Switch 2Channels Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:a4c1384f9f2ef87e",
+    "category": "Switch"
+  }
+]
+
+4. GET
+/devices/{device_id}
+
+OBS: Mostra um device (dispositivo) cadastrado especifico.
+        
+Exemplo Response (Retorna): 
+{
+  "device_info": {
+    "id": 1,
+    "label": "Lâmpada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpgv",
+    "category": "Lamp"
+  },
+  "device_operations": [
+    {
+      "name": "change-color",
+      "expected_schema": {
+        "properties": {
+          "hue": {
+            "maximum": 360,
+            "minimum": 0,
+            "title": "Hue",
+            "type": "integer"
+          },
+          "saturation": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Saturation",
+            "type": "integer"
+          },
+          "brightness": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Brightness",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "hue",
+          "saturation",
+          "brightness"
+        ],
+        "title": "ChangeColor",
+        "type": "object"
+      }
+    },
+    {
+      "name": "change-intensity",
+      "expected_schema": {
+        "properties": {
+          "brightness": {
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Brightness",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "brightness"
+        ],
+        "title": "ChangeIntensity",
+        "type": "object"
+      }
+    },
+    {
+      "name": "change-temperature",
+      "expected_schema": {
+        "properties": {
+          "temperature": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Temperature",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "temperature"
+        ],
+        "title": "ChangeTemperature",
+        "type": "object"
+      }
+    },
+    {
+      "name": "toggle",
+      "expected_schema": {
+        "properties": {
+          "toggle_on": {
+            "title": "Toggle On",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "toggle_on"
+        ],
+        "title": "BrightnessToggle",
+        "type": "object"
+      }
+    }
+  ]
+}        
+
+5. POST
+/devices
+
+OBS: Cadastra um device (dispositivo).
+Exemplo Request:
+Body:
+{        
+    label: "lãmpada",        
+    openhab_uid: "tuya:tuyaDevice:ebae0d2627f876236ccpge"
+}
+Exemplo Response (Retorna): 
+{
+  "id": 10,
+  "label": "lâmpada",
+  "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpge",
+  "category": "lâmpada"
+}
+        
+6. PUT
+/devices/{device_id}/replace
+
+OBS: Atualiza / Substitui um device (dispositivo) especifico.
+Exemplo Request:
+Body:
+{
+    device_id: 1,
+    openhab_uid: “tuya:tuyaDevice:ebae0d2627f876236ccpge”
+}
+
+Exemplo Response (Retorna): 
+{
+  "id": 1,
+  "label": "Lâmpada Yolo",
+  "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpge",
+  "category": "lâmpada"
+}
+
+7. PUT
+/devices/{device_id}/properties
+
+OBS: Atualizar / “Adicionar” propriedades de um device (dispositivo) específico.
+
+Exemplo Request:
+Body:
+{
+  "name": "toggle",
+  "data": {"toggle_on": false}
+}
+Exemplo Response (Retorna): 
+{ }
+
+8. GET
+/locations
+
+OBS: Mostra informações sobre dispositivos e suas operações disponíveis dentro do local.
+Exemplo Response (Retorna): 
+{
+  "device_info": {
+    "id": 1,
+    "label": "Lâmpada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpgv",
+    "category": "Lamp"
+  },
+  "device_operations": [
+    {
+      "name": "change-color",
+      "expected_schema": {
+        "properties": {
+          "hue": {
+            "maximum": 360,
+            "minimum": 0,
+            "title": "Hue",
+            "type": "integer"
+          },
+          "saturation": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Saturation",
+            "type": "integer"
+          },
+          "brightness": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Brightness",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "hue",
+          "saturation",
+          "brightness"
+        ],
+        "title": "ChangeColor",
+        "type": "object"
+      }
+    },
+    {
+      "name": "change-intensity",
+      "expected_schema": {
+        "properties": {
+          "brightness": {
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Brightness",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "brightness"
+        ],
+        "title": "ChangeIntensity",
+        "type": "object"
+      }
+    },
+    {
+      "name": "change-temperature",
+      "expected_schema": {
+        "properties": {
+          "temperature": {
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Temperature",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "temperature"
+        ],
+        "title": "ChangeTemperature",
+        "type": "object"
+      }
+    },
+    {
+      "name": "toggle",
+      "expected_schema": {
+        "properties": {
+          "toggle_on": {
+            "title": "Toggle On",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "toggle_on"
+        ],
+        "title": "BrightnessToggle",
+        "type": "object"
+      }
+    }
+  ]
+}
+
+9. GET
+/locations/location_types
+
+OBS: Mostra informações sobre os tipos de localizações.
+Exemplo Response (Retorna): 
+[
+  "BUILDING",
+  "FLOOR",
+  "APARTMENT"
+]
+
+10. POST        
+/locations
+
+OBS: Cadastra uma localização.
+Exemplo Request:
+Body:
+{                
+        "label": "Yolo",
+        "location_type": "BUILDING",
+        "parent_location_id": null
+}
+Exemplo Response (Retorna): 
+        {
+  "id": 10,
+  "label": "Yolo",
+  "location_type": "BUILDING",
+  "devices": [],        
+  "child_locations": []
+}
+
+11. PUT
+/locations/{location_id}
+
+OBS: Atualiza uma localização especifica. 
+Exemplo Request:
+Body:
+{
+        "label": "Prédio Boa Viagem",
+        "location_type": "BUILDING",
+        "parent_location_id": null
+}
+Exemplo Response (Retorna): 
+{
+  "id": 11,
+  "label": "Prédio Boa Viagem",
+  "location_type": "BUILDING",
+  "devices": [],
+  "child_location": []
+}
+        
+12. DELETE
+/locations/{location_id}
+
+OBS: Exclui uma localização especifica.
+Exemplo Response (Retorna): 
+
+No response body
+This request doesn't return any response body
+
+13. GET
+/locations/{location_id}/devices
+
+OBS: Mostra dispositivos disponíveis numa localização especifica.
+Exemplo Response (Retorna): 
+[
+  {
+    "id": 1,
+    "label": "Lâmpada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:ebae0d2627f876236ccpgv",
+    "category": "Lamp"
+  },
+  {
+    "id": 2,
+    "label": "Tomada Yolo",
+    "openhab_uid": "tuya:tuyaDevice:eb4b59a5903b11c15adu7m",
+    "category": "Plug"
+  },
+  {
+    "id": 3,
+    "label": "Interruptor Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:00158d00063ff206",
+    "category": "Switch"
+  },
+  {
+    "id": 4,
+    "label": "Tomada Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:84ba20fffe6d4d78",
+    "category": "Plug"
+  },
+  {
+    "id": 5,
+    "label": "Switch 2Channels Zigbee",
+    "openhab_uid": "zigbee:device:6f942817b6:a4c1384f9f2ef87e",
+    "category": "Switch"
+  }
+]
+
+14. PUT
+/locations/{location_id}/devices
+
+OBS: Adicionar devices (dispositivos) numa localização especifica. 
+Exemplo Request:
+Body:
+[1,2,3,4,5]
+Exemplo Response (Retorna): 
+No response body
+This request doesn't return any response body
