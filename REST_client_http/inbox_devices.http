@@ -1,0 +1,80 @@
+### API HOME ASSISTANT - APP YSH
+
+#### INBOX DEVICES
+
+### getInbox
+GET http://localhost:3000/inbox
+
+###
+
+### getDevices
+GET http://localhost:3000/devices
+
+###
+
+### getDeviceId
+GET http://localhost:3000/devices/9
+
+###
+
+### createDevice
+POST http://localhost:3000/devices
+Content-Type: application/json
+
+{
+    "name_device": "testeTV-1",
+    "entity_id": "tv-samsung",
+    "state": "ligado",
+    "last_changed": "latitude_1",
+    "last_updated": "longitude_1"  
+
+}
+
+
+###
+
+### updateDeviceProperties
+PUT http://localhost:3000/devices/10/properties
+Content-Type: application/json
+
+{
+    "entity_id": "testeTV-1",
+    "states": "ligado",
+    "last_changed": "latitude_teste6",
+    "last_updated": "longitude_teste08"
+
+}
+
+###
+
+### deleteDeviceId
+DELETE http://localhost:3000/devices/42
+
+###
+
+#### replaceDevice
+PUT http://localhost:3000/devices/43/replace
+Content-Type: application/json
+
+    
+{
+
+    "entity_id": "tv-samsung-novo",
+    "state": "ligado-novo",
+    "last_changed": "latitude_1-novo",
+    "last_updated": "longitude_1-novo"  
+
+}
+
+###
+
+### findDevicesNameOrId
+GET http://localhost:3000/devices_id_name/27
+
+###
+
+
+
+
+
+
