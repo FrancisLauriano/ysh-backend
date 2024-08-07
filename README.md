@@ -9,7 +9,7 @@
   <img src="http://img.shields.io/static/v1?label=Postman&message=11&color=orange&style=for-the-badge&logo=postman"/>
   <img src="http://img.shields.io/static/v1?label=Git&message=2.45.2&color=f05032&style=for-the-badge&logo=git"/>
   <img src="http://img.shields.io/static/v1?label=GitHub&message=2024&color=181717&style=for-the-badge&logo=github"/>
-  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
 </p>
 
@@ -50,6 +50,24 @@ $ npm run test:cov
 ## No modo de desenvolvimento o servidor será executado localmente:
 
 [http://localhost:3000](http://localhost:3000)
+
+
+... 
+
+## Linguagens, tecnologias, dependências e libs utilizadas :hammer_and_wrench: :gear: :books:
+
+- [NestJS](https://docs.nestjs.com/)
+- [Typescript](https://www.typescriptlang.org/download/)
+- [Node](https://nodejs.org/en/download/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Workbench MySQL](https://dev.mysql.com/downloads/workbench/)
+- [Draw.io](https://www.drawio.com/)
+- [TypeORM](https://typeorm.io/)
+- [Postman](https://www.postman.com/downloads/)
+- [Git](https://git-scm.com/downloads)
+- [GitHub](https://github.com/)
+
+...
 
 
 ## ENDPOINT’S DISPONÍVEIS PARA O FRONTEND ACESSAR A API HOME ASSISTANT - APLICAÇÃO BACK YSH
