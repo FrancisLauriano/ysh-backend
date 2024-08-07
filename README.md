@@ -1,3 +1,20 @@
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=NestJS&message=10.3&color=red&style=for-the-badge&logo=nestjs"/>
+  <img src="http://img.shields.io/static/v1?label=Typescript&message=5.4&color=blue&style=for-the-badge&logo=typescript"/>
+  <img src="http://img.shields.io/static/v1?label=Node&message=20.10.0&color=5fa04e&style=for-the-badge&logo=nodedotjs"/>
+  <img src="http://img.shields.io/static/v1?label=Draw.io&message=24.6.4&color=f08705&style=for-the-badge&logo=diagramsdotnet"/>
+  <img src="http://img.shields.io/static/v1?label=Workbench MySQL&message=8.0.38&color=4479a1&style=for-the-badge&logo=mysql&logoColor=f5f5f5"/>
+  <img src="http://img.shields.io/static/v1?label=PostgreSQL&message=16&color=4169e1&style=for-the-badge&logo=postgresql&logoColor=f5f5f5"/>
+  <img src="http://img.shields.io/static/v1?label=TypeORM&message=0.3.20&color=2d3748&style=for-the-badge&logo=typeorm"/>
+  <img src="http://img.shields.io/static/v1?label=Postman&message=11&color=orange&style=for-the-badge&logo=postman"/>
+  <img src="http://img.shields.io/static/v1?label=Git&message=2.45.2&color=f05032&style=for-the-badge&logo=git"/>
+  <img src="http://img.shields.io/static/v1?label=GitHub&message=2024&color=181717&style=for-the-badge&logo=github"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
+</p>
+
+
+
 ## Installation
 
 ```bash
