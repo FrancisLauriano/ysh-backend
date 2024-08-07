@@ -15,37 +15,48 @@
 
 
 
-## Installation
+## Instação das depedências
 
 ```bash
 $ npm install
 ```
 
+
 ## Running the app
 
+**development:**
 ```bash
-# development
 $ npm run start
+```
 
-# watch mode
+**watch mode:**
+```bash
 $ npm run start:dev
+```
 
-# production mode
+**production mode:**
+```bash
 $ npm run start:prod
 ```
 
+
 ## Test
 
+**unit tests:**
 ```bash
-# unit tests
 $ npm run test
+```
 
-# e2e tests
+**e2e tests:**
+```bash
 $ npm run test:e2e
+```
 
-# test coverage
+**test coverage:**
+```bash
 $ npm run test:cov
 ```
+
 
 ## No modo de desenvolvimento o servidor será executado localmente:
 
