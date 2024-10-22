@@ -304,7 +304,7 @@ json
 ```
 
 
-## Instação das depedências
+## Instação das depedências :arrow_down_small:
 
 ```bash
 $ npm install
