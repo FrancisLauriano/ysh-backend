@@ -61,13 +61,10 @@
 **5. Facilitar a Substituição e Configuração de Dispositivos:**
 - Agilizar o processo de troca e manutenção de dispositivos, preservando as configurações e a estrutura dos ambientes associados.
 
-**6. Garantir Segurança e Controle de Acesso:**
-- Implementar autenticação segura com JWT para garantir que apenas usuários autorizados possam acessar e gerenciar dispositivos.
-
-**7. Aumentar a Eficiência Operacional:**
+**6. Aumentar a Eficiência Operacional:**
 - Reduzir o tempo necessário para cadastrar e configurar dispositivos, utilizando automação e uma interface web eficiente para operadores e administradores.
 
-**8. Monitorar e Gerenciar o Histórico de Dispositivos e Ambientes:**
+**7. Monitorar e Gerenciar o Histórico de Dispositivos e Ambientes:**
 - Manter registros detalhados das configurações e atualizações realizadas, permitindo um acompanhamento histórico de cada dispositivo e ambiente.
 </p>
 
