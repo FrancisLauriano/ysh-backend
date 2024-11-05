@@ -27,7 +27,7 @@
 
 :small_blue_diamond: [Rotas - EndPoints](#Rotas---EndPoints-arrows_clockwise) :heavy_check_mark:
 
-:small_blue_diamond: [Instação das depedências](#instação-das-depedências-arrow_down_small) 
+:small_blue_diamond: [Instalação das depedências](#instalação-das-depedências-arrow_down_small) 
 
 :small_blue_diamond: [Executar app](#executar-app-arrow_forward) 
 
@@ -304,7 +304,7 @@ json
 ```
 
 
-## Instação das depedências :arrow_down_small:
+## Instalação das depedências :arrow_down_small:
 
 ```bash
 $ npm install
